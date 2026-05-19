@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Python Demo: Conditionals</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+<div id="header">
+  <button class="nav-btn" onclick="prevStep()">◀ Prev</button>
+  <div class="step-indicator" id="step-display">2-1. 条件分岐(IF)①</div>
+  <button class="nav-btn" onclick="nextStep()">Next ▶</button>
+</div>
+
+<div id="memory-hud">[MEMORY]<br><span id="mem-content">Wait...</span></div>
+
+<div id="code-monitor">
+  <div class="monitor-header">app.py</div>
+  <pre id="code-content"></pre>
+</div>
+
+<div id="content">
+  <!-- 2-1 -->
+  <div class="step-panel" id="step-1">
+    <h2>2-1. 比較演算子 == と !=</h2>
+    <button class="run-btn" onclick="runStep1(100)">score = 100</button>
+    <button class="run-btn" onclick="runStep1(50)">score = 50</button>
+  </div>
+  
+  <!-- 2-2 -->
+  <div class="step-panel" id="step-2">
+    <h2>2-2. インデント（Tab）の強制</h2>
+    <button class="run-btn" onclick="runStep2(true)">if x == 10:<br>&nbsp;&nbsp;print("Yes!")</button>
+    <button class="run-btn error" onclick="runStep2(false)">if x == 10:<br>print("Yes!")</button>
+  </div>
+  
+  <!-- 2-3 -->
+  <div class="step-panel" id="step-3">
+    <h2>2-3. 真偽値 True / False</h2>
+    <div class="code-block" style="font-size:0.9rem;">x = 10</div>
+    <button class="run-btn" onclick="runStep3(10)">print(x == 10)</button>
+    <button class="run-btn" onclick="runStep3(5)">print(x == 5)</button>
+  </div>
+  
+  <!-- 2-4 -->
+  <div class="step-panel" id="step-4">
+    <h2>2-4. 大小比較 &lt;, &gt;, &lt;=, &gt;=</h2>
+    x = <input type="number" id="s4-in" value="10" class="cyber-input">
+    <button class="run-btn" onclick="runStep4()">if x > 5:</button>
+  </div>
+  
+  <!-- 2-5 -->
+  <div class="step-panel" id="step-5">
+    <h2>2-5. そうでなければ else</h2>
+    score = <input type="number" id="s5-in" value="50" class="cyber-input">
+    <button class="run-btn" onclick="runStep5()">if score > 80:</button>
+  </div>
+  
+  <!-- 2-6 -->
+  <div class="step-panel" id="step-6">
+    <h2>2-6. さらに条件分岐 elif</h2>
+    score = <input type="number" id="s6-in" value="60" class="cyber-input">
+    <button class="run-btn" onclick="runStep6()">if score > 80:</button>
+  </div>
+  
+  <!-- 2-7 -->
+  <div class="step-panel" id="step-7">
+    <h2>2-7. 条件の組み合わせ and, or</h2>
+    time = <input type="number" id="s7-in" value="14" class="cyber-input">
+    <button class="run-btn" onclick="runStep7('and')">if time > 9 and time &lt; 17:</button>
+    <button class="run-btn" onclick="runStep7('or')">if time == 10 or time == 15:</button>
+  </div>
+  
+  <!-- 2-8 -->
+  <div class="step-panel" id="step-8">
+    <h2>2-8. 入力値を受け取る input</h2>
+    <input type="number" id="s8-in" value="3" class="cyber-input">
+    <button class="run-btn" onclick="runStep8()">count = input('何個買う？')</button>
+  </div>
+  
+  <!-- 2-9 -->
+  <div class="step-panel" id="step-9">
+    <h2>2-9. 偶奇判定</h2>
+    x = <input type="number" id="s9-in" value="4" class="cyber-input">
+    <button class="run-btn" onclick="runStep9()">if x % 2 == 0:</button>
+  </div>
+  
+  <!-- 2-10 -->
+  <div class="step-panel" id="step-10">
+    <h2>2-10. 残金計算</h2>
+    <input type="number" id="s10-in" value="15" class="cyber-input">
+    <button class="run-btn" onclick="runStep10()">input_count = input()</button>
+    <button class="run-btn error" id="s10-recover" style="display:none;" onclick="recoverAntiGravity()">▶ システム復旧</button>
+  </div>
+  
+  <!-- 2-11 -->
+  <div class="step-panel" id="step-11">
+    <h2>2-11. 2つの整数の和</h2>
+    x = <input type="number" id="s11-x" value="5" class="cyber-input" style="width:50px">
+    y = <input type="number" id="s11-y" value="10" class="cyber-input" style="width:50px">
+    <button class="run-btn" onclick="runStep11()">print(int(x) + int(y))</button>
+  </div>
+  
+  <!-- 2-12 -->
+  <div class="step-panel" id="step-12">
+    <h2>2-12. 3の倍数判定</h2>
+    x = <input type="number" id="s12-in" value="9" class="cyber-input">
+    <button class="run-btn" onclick="runStep12()">if int(x) % 3 == 0:</button>
+  </div>
+</div>
+
+<div id="world"></div>
+<script src="main.js"></script>
+</body>
+</html>
