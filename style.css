@@ -86,6 +86,23 @@ h2 { margin-top: 0; font-size: 1.2rem; color: #f0f; text-shadow: 0 0 5px #f0f; b
 .phys-obj.true-wall { background: rgba(0, 255, 255, 0.5); border-color: #0ff; box-shadow: 0 0 30px #0ff; }
 .phys-obj.false-wall { background: rgba(255, 0, 0, 0.8); border-color: #f00; box-shadow: 0 0 40px #f00; }
 
+@media (max-width: 1400px) {
+  #header { height: 50px; }
+  .nav-btn { padding: 6px 14px; font-size: 0.9rem; }
+  .step-indicator { font-size: 1.2rem; width: 350px; }
+  #content { width: 280px; top: 65px; left: 10px; }
+  .step-panel { padding: 12px; }
+  h2 { font-size: 1rem; }
+  .code-block { font-size: 0.95rem; }
+  .run-btn { padding: 8px 10px; font-size: 0.95rem; }
+  .cyber-input { width: 60px; font-size: 1rem; }
+  #memory-hud { top: 60px; right: 10px; font-size: 1.1rem; padding: 8px 12px; }
+  #code-monitor { top: 130px; right: 10px; width: 300px; }
+  #code-content { font-size: 1rem; line-height: 1.4; padding: 10px; }
+  .phys-obj { font-size: 1.3rem; padding: 8px 14px; }
+  .phys-obj.emoji { font-size: 3.5rem; }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   #content { width: 40%; left: 2.5%; }
